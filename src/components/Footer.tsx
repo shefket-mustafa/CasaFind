@@ -6,7 +6,7 @@ export default function Footer() {
 
     return (
 
-        <footer className="flex flex-col bg-gray-900 text-white px-5">
+        <footer className="flex flex-col bg-black text-white px-5">
         
 
         <div className="flex flex-row justify-between py-5 border-b-1">
