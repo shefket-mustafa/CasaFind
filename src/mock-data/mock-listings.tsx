@@ -1,0 +1,197 @@
+
+
+export const mockListings = [
+    {
+      id: "1",
+      title: "Modern Family House",
+      category: "House",
+      bedrooms: 3,
+      bathrooms: 2,
+      sqft: 1800,
+      price: 375000,
+      yearBuilt: 2015,
+      address: "123 Maple St, Austin, TX",
+      image: "https://images.unsplash.com/photo-1572120360610-d971b9b1b6c5"
+    },
+    {
+      id: "2",
+      title: "Luxury Downtown Apartment",
+      category: "Apartment",
+      bedrooms: 2,
+      bathrooms: 2,
+      sqft: 1100,
+      price: 450000,
+      yearBuilt: 2020,
+      address: "89 King St, San Francisco, CA",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+    },
+    {
+      id: "3",
+      title: "Cozy Studio",
+      category: "Apartment",
+      bedrooms: 1,
+      bathrooms: 1,
+      sqft: 650,
+      price: 220000,
+      yearBuilt: 2012,
+      address: "9 Elm St, Brooklyn, NY",
+      image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20d"
+    },
+    {
+      id: "4",
+      title: "Spacious Country House",
+      category: "House",
+      bedrooms: 4,
+      bathrooms: 3,
+      sqft: 2400,
+      price: 490000,
+      yearBuilt: 2009,
+      address: "88 Oak Dr, Nashville, TN",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+    },
+    {
+      id: "5",
+      title: "Modern Loft",
+      category: "Apartment",
+      bedrooms: 1,
+      bathrooms: 1,
+      sqft: 780,
+      price: 299000,
+      yearBuilt: 2018,
+      address: "301 Highline, Seattle, WA",
+      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+    },
+    {
+      id: "6",
+      title: "Traditional Colonial Home",
+      category: "House",
+      bedrooms: 3,
+      bathrooms: 2,
+      sqft: 1600,
+      price: 320000,
+      yearBuilt: 1995,
+      address: "12 Lincoln Ave, Hartford, CT",
+      image: "https://images.unsplash.com/photo-1600585154780-727c0b3ce5a3"
+    },
+    {
+      id: "7",
+      title: "Charming Bungalow",
+      category: "House",
+      bedrooms: 2,
+      bathrooms: 1,
+      sqft: 950,
+      price: 250000,
+      yearBuilt: 1982,
+      address: "73 Main St, Tucson, AZ",
+      image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
+    },
+    {
+      id: "8",
+      title: "High-Rise Apartment",
+      category: "Apartment",
+      bedrooms: 3,
+      bathrooms: 2,
+      sqft: 1300,
+      price: 520000,
+      yearBuilt: 2022,
+      address: "22 Horizon Blvd, Miami, FL",
+      image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914"
+    },
+    {
+      id: "9",
+      title: "Coastal Retreat",
+      category: "House",
+      bedrooms: 4,
+      bathrooms: 3,
+      sqft: 2100,
+      price: 599000,
+      yearBuilt: 2010,
+      address: "48 Ocean View Rd, Malibu, CA",
+      image: "https://images.unsplash.com/photo-1572120360610-d971b9b1b6c5"
+    },
+    {
+      id: "10",
+      title: "Urban Flat",
+      category: "Apartment",
+      bedrooms: 2,
+      bathrooms: 1,
+      sqft: 950,
+      price: 305000,
+      yearBuilt: 2019,
+      address: "305 5th Ave, Chicago, IL",
+      image: "https://images.unsplash.com/photo-1613977257363-a6e5bba8d8be"
+    },
+    {
+      id: "11",
+      title: "Luxury Mansion",
+      category: "House",
+      bedrooms: 6,
+      bathrooms: 5,
+      sqft: 5400,
+      price: 1200000,
+      yearBuilt: 2017,
+      address: "99 Grand Dr, Beverly Hills, CA",
+      image: "https://images.unsplash.com/photo-1617102428301-5f9390fd3db1"
+    },
+    {
+      id: "12",
+      title: "Suburban Townhouse",
+      category: "House",
+      bedrooms: 3,
+      bathrooms: 2,
+      sqft: 1500,
+      price: 340000,
+      yearBuilt: 2011,
+      address: "10 Maplewood Ln, Columbus, OH",
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c2924e5"
+    },
+    {
+      id: "13",
+      title: "Penthouse Suite",
+      category: "Apartment",
+      bedrooms: 3,
+      bathrooms: 3,
+      sqft: 2000,
+      price: 950000,
+      yearBuilt: 2021,
+      address: "777 Skyline Rd, New York, NY",
+      image: "https://images.unsplash.com/photo-1588854337221-4f1d179a962d"
+    },
+    {
+      id: "14",
+      title: "Riverside Cabin",
+      category: "House",
+      bedrooms: 2,
+      bathrooms: 1,
+      sqft: 900,
+      price: 215000,
+      yearBuilt: 2005,
+      address: "3 Riverbank Rd, Boise, ID",
+      image: "https://images.unsplash.com/photo-1554995207-c18c203602cb"
+    },
+    {
+      id: "15",
+      title: "Contemporary Apartment",
+      category: "Apartment",
+      bedrooms: 2,
+      bathrooms: 2,
+      sqft: 1200,
+      price: 385000,
+      yearBuilt: 2016,
+      address: "404 Central Ave, Denver, CO",
+      image: "https://images.unsplash.com/photo-1600585152904-d7d9bdf56d3e"
+    },
+    {
+      id: "16",
+      title: "Rustic Farmhouse",
+      category: "House",
+      bedrooms: 4,
+      bathrooms: 2,
+      sqft: 2300,
+      price: 450000,
+      yearBuilt: 1990,
+      address: "55 Prairie Ln, Des Moines, IA",
+      image: "https://images.unsplash.com/photo-1593854457870-9f8919db5c82"
+    }
+  ];
+  
