@@ -11,7 +11,7 @@ export const mockListings = [
       price: 375000,
       yearBuilt: 2015,
       address: "123 Maple St, Austin, TX",
-      image: "https://images.unsplash.com/photo-1572120360610-d971b9b1b6c5"
+      image: "https://i.pinimg.com/736x/fd/c5/b3/fdc5b3520870af529fa626369db16265.jpg"
     },
     {
       id: "2",
@@ -35,7 +35,7 @@ export const mockListings = [
       price: 220000,
       yearBuilt: 2012,
       address: "9 Elm St, Brooklyn, NY",
-      image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20d"
+      image: "https://sometimes-homemade.com/wp-content/uploads/2016/02/exterior.png"
     },
     {
       id: "4",
@@ -71,7 +71,7 @@ export const mockListings = [
       price: 320000,
       yearBuilt: 1995,
       address: "12 Lincoln Ave, Hartford, CT",
-      image: "https://images.unsplash.com/photo-1600585154780-727c0b3ce5a3"
+      image: "https://images.unsplash.com/photo-1628744448839-a475cc0e90c3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmljZSUyMGhvdXNlfGVufDB8fDB8fHww"
     },
     {
       id: "7",
@@ -107,7 +107,7 @@ export const mockListings = [
       price: 599000,
       yearBuilt: 2010,
       address: "48 Ocean View Rd, Malibu, CA",
-      image: "https://images.unsplash.com/photo-1572120360610-d971b9b1b6c5"
+      image: "https://cdn.mos.cms.futurecdn.net/KV82TseQgkKZJb4C5heqsQ.jpg"
     },
     {
       id: "10",
@@ -119,7 +119,7 @@ export const mockListings = [
       price: 305000,
       yearBuilt: 2019,
       address: "305 5th Ave, Chicago, IL",
-      image: "https://images.unsplash.com/photo-1613977257363-a6e5bba8d8be"
+      image: "https://media.vrbo.com/lodging/35000000/34330000/34327800/34327788/529f0747.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill"
     },
     {
       id: "11",
@@ -131,7 +131,7 @@ export const mockListings = [
       price: 1200000,
       yearBuilt: 2017,
       address: "99 Grand Dr, Beverly Hills, CA",
-      image: "https://images.unsplash.com/photo-1617102428301-5f9390fd3db1"
+      image: "https://media.vrbo.com/lodging/35000000/34330000/34327800/34327788/ffc5633a.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill"
     },
     {
       id: "12",
@@ -143,7 +143,7 @@ export const mockListings = [
       price: 340000,
       yearBuilt: 2011,
       address: "10 Maplewood Ln, Columbus, OH",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c2924e5"
+      image: "https://i.dailymail.co.uk/1s/2025/01/11/20/93996079-0-image-a-17_1736625681270.jpg"
     },
     {
       id: "13",
@@ -155,7 +155,7 @@ export const mockListings = [
       price: 950000,
       yearBuilt: 2021,
       address: "777 Skyline Rd, New York, NY",
-      image: "https://images.unsplash.com/photo-1588854337221-4f1d179a962d"
+      image: "https://thumbs.dreamstime.com/b/nice-house-landscaped-hill-3258444.jpg"
     },
     {
       id: "14",
@@ -179,7 +179,7 @@ export const mockListings = [
       price: 385000,
       yearBuilt: 2016,
       address: "404 Central Ave, Denver, CO",
-      image: "https://images.unsplash.com/photo-1600585152904-d7d9bdf56d3e"
+      image: "https://cdn.houseplansservices.com/content/kbif4utjo4lvt8kq27s4tj9cq6/w991x660.jpg?v=10"
     },
     {
       id: "16",
@@ -191,7 +191,7 @@ export const mockListings = [
       price: 450000,
       yearBuilt: 1990,
       address: "55 Prairie Ln, Des Moines, IA",
-      image: "https://images.unsplash.com/photo-1593854457870-9f8919db5c82"
+      image: "https://en.idei.club/uploads/posts/2023-12/1702587927_en-idei-club-p-nice-house-with-swimming-pool-dizain-pinte-1.jpg"
     }
   ];
   
