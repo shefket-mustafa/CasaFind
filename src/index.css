@@ -4,3 +4,11 @@ html {
     scroll-behavior: smooth;
     background-color: black;
 }
+
+.clip-x-slant {
+    clip-path: polygon(0 0, 100% 100%, 0% 100%);
+  }
+
+  .clip-x-slant-reverse {
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+  }

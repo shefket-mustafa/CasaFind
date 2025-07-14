@@ -4,7 +4,7 @@ export default function Header(){
 
     return (
 
-        <div className='flex sticky top-0 z-30 justify-between items-center px-15 h-20 bg-black/80 text-white'>
+        <div className='flex sticky top-0 z-30 justify-between items-center px-15 h-20 bg-black/90 text-white'>
 
         <div className='flex text-3xl'>
             <Link to='/'>casaFind</Link>
