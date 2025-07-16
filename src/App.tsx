@@ -8,6 +8,7 @@ import ItemDetails from "./components/ItemDetails"
 import Contacts from "./pages/Contacts"
 import { useState } from "react"
 import PopUp from "./components/PopUpModal"
+import About from "./pages/About"
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/catalog" element={<FindHome />} />
+      <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contacts popHandler={popHandler}/>} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 
