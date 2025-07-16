@@ -23,7 +23,6 @@ export default function FindHomeItem({listing}: Listing) {
 
         <div className=" relative h-55 bg-cover bg-center"
         style={{backgroundImage: `url(${listing.image})`}}>
-
                 <Link className="absolute bottom-0 
                 left-1/2 transform translate-y-1/2 -translate-x-1/2 
                 bg-black py-2 px-8 text-lg md:text-2xl text-white
