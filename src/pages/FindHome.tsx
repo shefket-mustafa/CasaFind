@@ -8,11 +8,14 @@ import FindHomeItem from "../components/FindHomeItem";
 export default function FindHome() {
   const [sortBy, setSortBy] = useState("");
   const [filterBy, setFilter] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredListings = mockListings.filter((listing) =>
-    filterBy === "" ? true :
-    listing.category.toLowerCase().includes(filterBy.toLowerCase())
-  );
+
+  const filteredListings = mockListings.filter((listing) => {
+    return (
+      (filterBy === ""  || listing.category.toLowerCase().includes(filterBy.toLowerCase())) && 
+      (searchQuery === "" || listing.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    )});
 
   const sortedListings = [...filteredListings].sort((a, b) => {
     switch (sortBy) {
@@ -86,14 +89,15 @@ export default function FindHome() {
           </select>
         </div>
 
-        {/* Search Input (placeholder only for now) */}
+        {/* Search  */}
         <div className="relative w-full max-w-md">
           <input
             type="text"
-            placeholder="Search location..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="bg-gray-200 px-4 py-3 pr-12 rounded w-full"
           />
-          <IoSearchOutline className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
+          <IoSearchOutline className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer" />
         </div>
       </div>
 
