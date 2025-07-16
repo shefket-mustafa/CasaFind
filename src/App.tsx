@@ -6,18 +6,32 @@ import FindHome from "./pages/FindHome"
 import ScrollOnTop from "./components/ScrollOnTop"
 import ItemDetails from "./components/ItemDetails"
 import Contacts from "./pages/Contacts"
+import { useState } from "react"
+import PopUp from "./components/PopUpModal"
 
 function App() {
+
+  const [popMessage, setPopMessage] = useState("");
+
+  const popHandler = (message:string) => {
+    setPopMessage(message);
+
+    setTimeout(() => {
+      setPopMessage("")
+    },2000)
+    
+  };
 
   return (
     <>
     <ScrollOnTop/>
     <Header />
+    {popMessage && <PopUp message={popMessage}/>}
 
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/catalog" element={<FindHome />} />
-      <Route path="/contact" element={<Contacts />} />
+      <Route path="/contact" element={<Contacts popHandler={popHandler}/>} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 
 

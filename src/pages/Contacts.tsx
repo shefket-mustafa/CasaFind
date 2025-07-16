@@ -1,14 +1,11 @@
-import { useNavigate } from "react-router"
+import { Form, useNavigate } from "react-router"
 
-export default function Contacts() {
+interface PopHandler {
+    popHandler: (message:string) => void
+}
 
+export default function Contacts( {popHandler}:PopHandler ) {
     const navigate = useNavigate();
-
-    const contactHandler = () => {
-        alert("Thanks for reaching out! Our team will contact you ASAP!")
-        navigate('/')
-    }
-
 
 
     return(
@@ -23,9 +20,19 @@ export default function Contacts() {
               Fill out the form below or visit us at our office.
             </p>
 
-            <form onSubmit={contactHandler} className="space-y-4">
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target as HTMLFormElement);
+                const name = formData.get("name");
+                popHandler(`Thanks for reaching out, ${name}! Our team will contact you ASAP!`)
+
+                setTimeout(() => {
+                    navigate('/')
+                },2000)
+                } } className="space-y-4">
               <input
                 type="text"
+                name="name"
                 placeholder="Full Name"
                 className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
               />
