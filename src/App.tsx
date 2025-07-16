@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import FindHome from "./pages/FindHome"
 import ScrollOnTop from "./components/ScrollOnTop"
 import ItemDetails from "./components/ItemDetails"
+import Contacts from "./pages/Contacts"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/catalog" element={<FindHome />} />
+      <Route path="/contact" element={<Contacts />} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 
 
