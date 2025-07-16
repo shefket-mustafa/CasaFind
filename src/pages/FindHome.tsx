@@ -46,7 +46,7 @@ export default function FindHome() {
           <h1 className="text-4xl md:text-6xl font-bold">Exclusive Homes</h1>
           <p className="max-w-[600px]">
             With locations all across the US and Canada, you can search for real estate listings,
-            view photos, and connect with a PLACE Partner agent almost anywhere.
+            view photos, and connect with a casaFind Partner agent almost anywhere.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-1/2 h-[80px] bg-white/50 z-10 clip-x-slant"></div>

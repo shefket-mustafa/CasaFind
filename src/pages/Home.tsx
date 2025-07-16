@@ -293,7 +293,7 @@ bg-cover bg-center"
 
       {/* Discover why section */}
 
-      <div className="flex flex-col justify-center items-center py-20 text-2xl  md:text-5xl h-screen w-full gap-20 bg-white">
+      <div className="flex flex-col justify-center items-center text-2xl  md:text-5xl h-screen w-full gap-20 bg-white">
         <h1 className="border-6 font-bold py-20 p-10">
           Discover why people have chosen casaFind
         </h1>

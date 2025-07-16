@@ -3,11 +3,13 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import FindHome from "./pages/FindHome"
+import ScrollOnTop from "./components/ScrollOnTop"
 
 function App() {
 
   return (
     <>
+    <ScrollOnTop/>
     <Header />
 
     <Routes>
