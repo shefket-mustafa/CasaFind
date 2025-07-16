@@ -103,7 +103,8 @@ export default function FindHome() {
 
       {/* Listings */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-20 px-6">
-        {sortedListings.map((listing) => (
+        {sortedListings.length ===0 ? <div className="flex items-center col-span-full justify-center text-center text-2xl w-full"><h1>Couldn't find what you are looking for!</h1></div> : 
+        sortedListings.map((listing) => (
           <FindHomeItem key={listing.id} listing={listing} />
         ))}
       </div>
