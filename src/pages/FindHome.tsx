@@ -4,18 +4,21 @@ import { MdOutlineSort } from "react-icons/md";
 import { mockListings } from "../mock-data/mock-listings";
 import { useState } from "react";
 import FindHomeItem from "../components/FindHomeItem";
+import { motion } from "motion/react";
 
 export default function FindHome() {
   const [sortBy, setSortBy] = useState("");
   const [filterBy, setFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
-
   const filteredListings = mockListings.filter((listing) => {
     return (
-      (filterBy === ""  || listing.category.toLowerCase().includes(filterBy.toLowerCase())) && 
-      (searchQuery === "" || listing.title.toLowerCase().includes(searchQuery.toLowerCase()))
-    )});
+      (filterBy === "" ||
+        listing.category.toLowerCase().includes(filterBy.toLowerCase())) &&
+      (searchQuery === "" ||
+        listing.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+  });
 
   const sortedListings = [...filteredListings].sort((a, b) => {
     switch (sortBy) {
@@ -39,22 +42,35 @@ export default function FindHome() {
   return (
     <div className="w-full bg-white">
       {/* Hero */}
-      <div className="relative h-[450px]">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{once:true}}
+        className="relative h-[450px]"
+      >
         <div className="absolute inset-0 z-0 bg-[url('https://robbreport.com/wp-content/uploads/2023/02/41Popcorn_HiRes_23080901-1.jpg?w=800')] bg-cover" />
         <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black to-transparent" />
         <div className="relative z-10 pt-40 flex flex-col justify-center items-center text-white gap-6 px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold">Exclusive Homes</h1>
           <p className="max-w-[600px]">
-            With locations all across the US and Canada, you can search for real estate listings,
-            view photos, and connect with a casaFind Partner agent almost anywhere.
+            With locations all across the US and Canada, you can search for real
+            estate listings, view photos, and connect with a casaFind Partner
+            agent almost anywhere.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-1/2 h-[80px] bg-white/50 z-10 clip-x-slant"></div>
         <div className="absolute bottom-0 right-0 w-1/2 h-[80px] bg-white/50 z-10 clip-x-slant-reverse"></div>
-      </div>
+      </motion.div>
 
       {/* Controls */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-10 px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row justify-center items-center gap-6 mt-10 px-6"
+      >
         {/* Sort */}
         <div className="flex items-center gap-2">
           <MdOutlineSort className="text-gray-700" />
@@ -99,14 +115,21 @@ export default function FindHome() {
           />
           <IoSearchOutline className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer" />
         </div>
-      </div>
+      </motion.div>
 
       {/* Listings */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-20 px-6">
-        {sortedListings.length ===0 ? <div className="flex items-center col-span-full justify-center text-center text-2xl w-full"><h1>Couldn't find what you are looking for!</h1></div> : 
-        sortedListings.map((listing) => (
-          <FindHomeItem key={listing.id} listing={listing} />
-        ))}
+        {sortedListings.length === 0 ? (
+          <div className="flex items-center col-span-full justify-center text-center text-2xl w-full">
+            <h1>Couldn't find what you are looking for!</h1>
+          </div>
+        ) : (
+          sortedListings.map((listing) => (
+            <div>
+              <FindHomeItem listing={listing} />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
