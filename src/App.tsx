@@ -9,6 +9,8 @@ import Contacts from "./pages/Contacts"
 import { useState } from "react"
 import PopUp from "./components/PopUpModal"
 import About from "./pages/About"
+import Sell from "./pages/Sell"
+import { ListingsProvider } from "./context/ListingsContext"
 
 function App() {
 
@@ -26,11 +28,13 @@ function App() {
   return (
     <>
     <ScrollOnTop/>
+    <ListingsProvider>
     <Header />
     {popMessage && <PopUp message={popMessage}/>}
 
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/sell" element={<Sell popHandler={popHandler}/>} />
       <Route path="/catalog" element={<FindHome />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contacts popHandler={popHandler}/>} />
@@ -39,6 +43,7 @@ function App() {
 
 
     </Routes>
+    </ListingsProvider>
     <Footer />
     </>
   )

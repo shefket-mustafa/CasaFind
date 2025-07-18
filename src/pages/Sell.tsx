@@ -10,10 +10,12 @@ interface FormData {
   title: string;
   image: string;
   category: "house" | "apartment";
+  bathrooms: number;
   bedrooms: number;
   sqft: number;
   yearBuilt: number;
   price: number;
+  address: string;
 }
 
 export default function Sell({ popHandler }: PopHandler) {
@@ -29,10 +31,10 @@ export default function Sell({ popHandler }: PopHandler) {
   const submitHouseButton = (data: FormData) => {
     const newListing = { ...data, id: uuidv4() };
     addListing(newListing);
-    popHandler("You have submitted your property!")
+    popHandler("You have submitted your property!");
     setTimeout(() => {
-        navigate("/catalog");
-    },2000)
+      navigate("/catalog");
+    }, 2000);
   };
 
   return (
@@ -43,10 +45,7 @@ export default function Sell({ popHandler }: PopHandler) {
         </h2>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit(submitHouseButton);
-          }}
+          onSubmit={handleSubmit(submitHouseButton)}
           className="space-y-6"
         >
           <input
@@ -57,13 +56,14 @@ export default function Sell({ popHandler }: PopHandler) {
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
           <input
-            {...register("imageUrl")}
+            {...register("image")}
             name="imageUrl"
             required
             placeholder="Image URL"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
           <select
+            {...register("category")}
             name="category"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-black"
           >
@@ -99,6 +99,24 @@ export default function Sell({ popHandler }: PopHandler) {
               name="price"
               type="number"
               placeholder="Price"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              {...register("bathrooms")}
+              name="bathrooms"
+              type="number"
+              placeholder="Bathrooms"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            />
+
+            <input
+              {...register("address")}
+              name="address"
+              type="text"
+              placeholder="Address"
               className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
             />
           </div>

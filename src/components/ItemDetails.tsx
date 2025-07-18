@@ -1,9 +1,10 @@
 import { Link, useParams } from "react-router";
-import { mockListings } from "../mock-data/mock-listings";
+import { useListings } from "../context/ListingsContext";
 
 export default function ItemDetails() {
   const { id } = useParams();
-  const listing = mockListings.find((listing) => listing.id === id);
+  const {listings} = useListings();
+  const listing = listings.find((listing) => listing.id === id);
 
   if (!listing) {
     return (

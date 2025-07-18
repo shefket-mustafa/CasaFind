@@ -1,17 +1,18 @@
 import { IoSearchOutline } from "react-icons/io5";
 import { MdFilterList } from "react-icons/md";
 import { MdOutlineSort } from "react-icons/md";
-import { mockListings } from "../mock-data/mock-listings";
 import { useState } from "react";
 import FindHomeItem from "../components/FindHomeItem";
 import { motion } from "motion/react";
+import { useListings } from "../context/ListingsContext";
 
 export default function FindHome() {
   const [sortBy, setSortBy] = useState("");
   const [filterBy, setFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const { listings } = useListings();
 
-  const filteredListings = mockListings.filter((listing) => {
+  const filteredListings = listings.filter((listing) => {
     return (
       (filterBy === "" ||
         listing.category.toLowerCase().includes(filterBy.toLowerCase())) &&
@@ -125,8 +126,8 @@ export default function FindHome() {
           </div>
         ) : (
           sortedListings.map((listing) => (
-            <div>
-              <FindHomeItem listing={listing} />
+            <div key={listing.id}>
+              <FindHomeItem  listing={listing} />
             </div>
           ))
         )}
