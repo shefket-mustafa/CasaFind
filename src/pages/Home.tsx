@@ -16,16 +16,16 @@ export default function Home() {
         <div
           className=" absolute inset-0 z-0
             bg-[url(https://robbreport.com/wp-content/uploads/2023/02/41Popcorn_HiRes_23080901-1.jpg?w=800)]
-            h-screen w-full bg-cover 
+            md:h-screen w-full bg-cover 
             "
         ></div>
 
         <div className="absolute inset-0 bg-black/30 bg-gradient-to-b from-black to-transparent"></div>
 
         <div className="relative pt-40 z-10 flex flex-col justify-center items-center text-white gap-10">
-          <p className="text-6xl font-bold">FIND YOUR DREAM HOME</p>
+          <p className="text-4xl px-10 md:text-6xl font-bold">FIND YOUR DREAM HOME</p>
 
-          <p className="text-lg md:text-2xl max-w-xl">
+          <p className="text-lg px-10 md:text-2xl max-w-xl">
             Explore top-rated listings, connect with trusted agents, and make
             your next move with confidence.
           </p>
@@ -44,7 +44,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative z-15  text-black h-25 font-bold px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:-mt-20 mb-20"
+        className="hidden relative z-15  text-black h-25 font-bold px-10 md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:-mt-20 mb-20"
       >
         <div className="flex flex-col items-center px-6 py-4  shadow-2xl  bg-white rounded-4xl ">
           <p className="text-4xl/14 max-w-lg">Save on Taxes and Fees</p>
@@ -92,7 +92,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
             className="bg-[url(https://www.quickenloans.com/learnassets/QuickenLoans.com/Learning%20Center%20Images/Siege-real-estate-propery-taxes-vs-personal.png)]
-        bg-contain bg-no-repeat w-1/2 h-1/2 flex items-center justify-center mx-10"
+        bg-cover bg-center w-full md:w-1/2 h-1/2 flex items-center justify-center mx-10"
           ></motion.div>
 
           {/* right container */}
@@ -101,7 +101,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 text-left flex flex-col items center"
+            className="w-full md:w-1/2 py-10 text-left flex flex-col items center"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Save on Taxes and Fees
@@ -237,7 +237,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
             className="bg-[url(https://www.quickenloans.com/learnassets/QuickenLoans.com/Learning%20Center%20Images/Siege-real-estate-propery-taxes-vs-personal.png)]
-        bg-contain bg-no-repeat w-1/2 h-1/2 flex items-center justify-center mx-10"
+        bg-cover bg-center w-full md:w-1/2 h-1/2 flex items-center justify-center mx-10"
           ></motion.div>
 
           {/* right container */}
@@ -246,7 +246,7 @@ export default function Home() {
            whileInView={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.8, ease: "easeOut" }}
            viewport={{ once: true }}
-          className="w-full md:w-1/2 text-left flex flex-col items center">
+          className="w-full md:w-1/2 text-left py-10 flex flex-col items center">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Sell Faster and Smarter
             </h2>
@@ -318,7 +318,7 @@ export default function Home() {
             <li>Neighborhood insights and market trends</li>
             <li>Direct contact with trusted local agents</li>
           </ul>
-          <div className="mt-8 px-6 py-3">
+          <div className="mt-8 px-2 py-3">
             <Link
               to="/learn-more"
               className="inline-block bg-black text-white px-7 py-2 rounded-lg text-xl hover:bg-gray-800 transition"
@@ -362,7 +362,7 @@ bg-cover bg-center"
          whileInView={{ opacity: 1, x: 0 }}
          transition={{ duration: 0.8, ease: "easeOut" }}
          viewport={{ once: true }}
-        className="relative z-20 flex flex-col justify-center items-center h-full gap-10">
+        className="relative z-20 flex flex-col px-10 justify-center items-center h-full gap-10">
           <h1 className="text-4xl md:text-6xl text-white font-bold">
             Want to Sell Smarter or Buy with Confidence?
           </h1>
@@ -387,13 +387,13 @@ bg-cover bg-center"
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="flex flex-col justify-center items-center text-2xl  md:text-5xl h-screen w-full gap-20 bg-white"
+        className=" hidden  md:flex flex-col justify-center items-center text-2xl  md:text-5xl h-screen w-full gap-20 bg-white"
       >
         <h1 className="border-6 font-bold py-20 p-10">
           Discover why people have chosen casaFind
         </h1>
 
-        <div className="flex flex-col lg:flex-row w-full px-20 gap-10">
+        <div className=" flex flex-col lg:flex-row w-full px-20 gap-10">
           {/* left image */}
           <motion.div
            initial={{ opacity: 0, x: -100 }}
