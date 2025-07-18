@@ -28,7 +28,7 @@
 ## Getting Started
 
 ```bash
-git clone git@github.com:shefket-mustafa/casaFind.git
+git clone git@github.com:shefket-mustafa/CasaFind.git
 cd casaFind
 npm install
 npm run dev
