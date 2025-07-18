@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# 🏡 CasaFind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CasaFind** is a modern, responsive real estate web application built with **React + TypeScript**, powered by **Context API** for global state management. It features a dynamic catalog of property listings, user-controlled submissions, and smooth UI animations powered by **Framer Motion** and **Tailwind CSS**. The app is designed as a practice project to solidify frontend architecture, form validation with **Yup**, and React ecosystem fundamentals.
 
-Currently, two official plugins are available:
+> 🚧 This is a learning-focused project, and a work in progress. The goal is to master component organization, form control, client-side validation, and dynamic rendering of real estate data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- ⚡ Vite (fast dev server + optimized builds)
+- ⚛️ React 18 + TypeScript
+- 🌀 Context API (global state management)
+- 🎨 Tailwind CSS
+- 🎬 Framer Motion (animations)
+- ✅ Yup (form validation)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Project Goals
 
-- Configure the top-level `parserOptions` property like this:
+- Responsive multi-page layout (Home, Catalog, Sell, Contact, About)
+- Dynamic listing catalog with detail pages
+- Form-based property submission with validation
+- Clean reusable component structure
+- Practice with routing, controlled inputs, conditional rendering, and UI state
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Getting Started
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+```bash
+git clone git@github.com:shefket-mustafa/casaFind.git
+cd casaFind
+npm install
+npm run dev
