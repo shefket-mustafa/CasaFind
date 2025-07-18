@@ -25,7 +25,7 @@ export default function Header(){
         </div>
 
         <div>
-            <p>Guest</p>
+            {/* <p>Guest</p> */}
         </div>
 
         </motion.div>
