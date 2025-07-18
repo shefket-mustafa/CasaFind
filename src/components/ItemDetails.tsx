@@ -61,7 +61,7 @@ export default function ItemDetails() {
       </div>
 
       {/* Buy Now Button */}
-      <div className="flex justify-center transform -translate-10">
+      <div className="flex justify-center transform  translate-5 md:-translate-10">
         <Link to='/contact'
           className="bg-black text-white px-8 py-3 rounded-lg text-lg hover:bg-gray-800 transition duration-200"
         >
