@@ -1,10 +1,11 @@
+import { Listing } from "../context/ListingsContext";
 
 
 export const mockListings = [
     {
       id: "1",
-      title: "Modern Family House",
-      category: "House",
+      title: "Modern Family house",
+      category: "house",
       bedrooms: 3,
       bathrooms: 2,
       sqft: 1800,
@@ -15,8 +16,8 @@ export const mockListings = [
     },
     {
       id: "2",
-      title: "Luxury Downtown Apartment",
-      category: "Apartment",
+      title: "Luxury Downtown apartment",
+      category: "apartment",
       bedrooms: 2,
       bathrooms: 2,
       sqft: 1100,
@@ -28,7 +29,7 @@ export const mockListings = [
     {
       id: "3",
       title: "Cozy Studio",
-      category: "Apartment",
+      category: "apartment",
       bedrooms: 1,
       bathrooms: 1,
       sqft: 650,
@@ -39,8 +40,8 @@ export const mockListings = [
     },
     {
       id: "4",
-      title: "Spacious Country House",
-      category: "House",
+      title: "Spacious Country house",
+      category: "house",
       bedrooms: 4,
       bathrooms: 3,
       sqft: 2400,
@@ -52,7 +53,7 @@ export const mockListings = [
     {
       id: "5",
       title: "Modern Loft",
-      category: "Apartment",
+      category: "apartment",
       bedrooms: 1,
       bathrooms: 1,
       sqft: 780,
@@ -64,7 +65,7 @@ export const mockListings = [
     {
       id: "6",
       title: "Traditional Colonial Home",
-      category: "House",
+      category: "house",
       bedrooms: 3,
       bathrooms: 2,
       sqft: 1600,
@@ -76,7 +77,7 @@ export const mockListings = [
     {
       id: "7",
       title: "Charming Bungalow",
-      category: "House",
+      category: "house",
       bedrooms: 2,
       bathrooms: 1,
       sqft: 950,
@@ -87,8 +88,8 @@ export const mockListings = [
     },
     {
       id: "8",
-      title: "High-Rise Apartment",
-      category: "Apartment",
+      title: "High-Rise apartment",
+      category: "apartment",
       bedrooms: 3,
       bathrooms: 2,
       sqft: 1300,
@@ -100,7 +101,7 @@ export const mockListings = [
     {
       id: "9",
       title: "Coastal Retreat",
-      category: "House",
+      category: "house",
       bedrooms: 4,
       bathrooms: 3,
       sqft: 2100,
@@ -112,7 +113,7 @@ export const mockListings = [
     {
       id: "10",
       title: "Urban Flat",
-      category: "Apartment",
+      category: "apartment",
       bedrooms: 2,
       bathrooms: 1,
       sqft: 950,
@@ -124,7 +125,7 @@ export const mockListings = [
     {
       id: "11",
       title: "Luxury Mansion",
-      category: "House",
+      category: "house",
       bedrooms: 6,
       bathrooms: 5,
       sqft: 5400,
@@ -136,7 +137,7 @@ export const mockListings = [
     {
       id: "12",
       title: "Suburban Townhouse",
-      category: "House",
+      category: "house",
       bedrooms: 3,
       bathrooms: 2,
       sqft: 1500,
@@ -148,7 +149,7 @@ export const mockListings = [
     {
       id: "13",
       title: "Penthouse Suite",
-      category: "Apartment",
+      category: "apartment",
       bedrooms: 3,
       bathrooms: 3,
       sqft: 2000,
@@ -160,7 +161,7 @@ export const mockListings = [
     {
       id: "14",
       title: "Riverside Cabin",
-      category: "House",
+      category: "house",
       bedrooms: 2,
       bathrooms: 1,
       sqft: 900,
@@ -171,8 +172,8 @@ export const mockListings = [
     },
     {
       id: "15",
-      title: "Contemporary Apartment",
-      category: "Apartment",
+      title: "Contemporary apartment",
+      category: "apartment",
       bedrooms: 2,
       bathrooms: 2,
       sqft: 1200,
@@ -184,7 +185,7 @@ export const mockListings = [
     {
       id: "16",
       title: "Rustic Farmhouse",
-      category: "House",
+      category: "house",
       bedrooms: 4,
       bathrooms: 2,
       sqft: 2300,
@@ -193,5 +194,5 @@ export const mockListings = [
       address: "55 Prairie Ln, Des Moines, IA",
       image: "https://en.idei.club/uploads/posts/2023-12/1702587927_en-idei-club-p-nice-house-with-swimming-pool-dizain-pinte-1.jpg"
     }
-  ];
+  ] as const satisfies Listing[];;
   

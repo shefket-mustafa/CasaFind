@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router"
 
-interface PopHandler {
+export interface PopHandler {
     popHandler: (message:string) => void
 }
 

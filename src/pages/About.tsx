@@ -19,7 +19,7 @@ export default function About() {
         </div>
   
         {/* Vision & Team Section */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed">
