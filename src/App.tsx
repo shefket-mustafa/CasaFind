@@ -11,6 +11,7 @@ import PopUp from "./components/PopUpModal"
 import About from "./pages/About"
 import Sell from "./pages/Sell"
 import { ListingsProvider } from "./context/ListingsContext"
+import AdminPanel from "./pages/AdminPanel"
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
       <Route path="/contact" element={<Contacts popHandler={popHandler}/>} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 
+      <Route path="/admin" element={<AdminPanel />} />
 
 
     </Routes>
