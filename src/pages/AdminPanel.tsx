@@ -65,7 +65,7 @@ export default function AdminPanel({popHandler}: PopHandler) {
         </div>
   
         <div className="mt-8 text-center">
-          <button className="px-6 py-3 bg-black text-white cursor-pointer rounded hover:bg-gray-800 transition text-lg">
+          <button onClick={() => navigate('/sell')} className="px-6 py-3 bg-black text-white cursor-pointer rounded hover:bg-gray-800 transition text-lg">
             + Add New Listing
           </button>
         </div>
