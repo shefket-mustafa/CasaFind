@@ -43,7 +43,7 @@ function App() {
       <Route path="/contact" element={<Contacts popHandler={popHandler}/>} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 
-      <Route path="/admin" element={<AdminPanel />} />
+      <Route path="/admin" element={<AdminPanel popHandler={popHandler}/>} />
 
 
     </Routes>

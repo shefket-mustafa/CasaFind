@@ -20,7 +20,7 @@ interface FormData {
 
 export default function Edit({ popHandler }: PopHandler) {
   const navigate = useNavigate();
-  const { editListing, getCurrentListing } = useListings();
+  const { editListing,  getCurrentListing } = useListings();
 
   const {id} = useParams();
 
@@ -51,6 +51,8 @@ export default function Edit({ popHandler }: PopHandler) {
       navigate("/admin");
     }, 2000);
   };
+
+
 
   return (
     <div className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-20">

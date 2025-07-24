@@ -19,6 +19,7 @@ interface ListingsContextType  {
     addListing: (listing: Listing) => void;
     editListing: (listing: Listing) => void;
     getCurrentListing: (id: string) => Listing | undefined;
+    deleteListing: (id: string) => void;
 }
 
 const ListingsContext = createContext<ListingsContextType | undefined>(undefined);
@@ -36,13 +37,19 @@ export const ListingsProvider = ({children} : {children: React.ReactNode}) => {
         })
       }
 
+      const deleteListing = (id:string) => {
+        setListings((prev) => {
+          return prev.filter((listing) => listing.id !== id)
+        })
+      }
+
       //For edit section's values
       const getCurrentListing = (id:string)=> {
         return listings.find((listing) => listing.id === id);
       } ;
 
       return (
-        <ListingsContext.Provider value={{ listings, addListing, editListing, getCurrentListing }}>
+        <ListingsContext.Provider value={{ listings, addListing, editListing, getCurrentListing, deleteListing }}>
         {children}
       </ListingsContext.Provider>
       )

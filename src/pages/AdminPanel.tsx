@@ -1,9 +1,23 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Listing, useListings } from "../context/ListingsContext"
 
-export default function AdminPanel() {
+interface PopHandler {
+  popHandler : (message: string) => void
+}
 
-    const {listings} = useListings();
+export default function AdminPanel({popHandler}: PopHandler) {
+
+    const {listings, deleteListing} = useListings();
+    const navigate = useNavigate();
+
+    const deleteHouseButton = (id: string) => {
+      if(!id) return;
+      deleteListing(id);
+      popHandler("You have deleted the property!");
+    setTimeout(() => {
+      navigate("/admin");
+    }, 2000);
+  }
 
     return(
         <div className="min-h-screen bg-white px-4 py-8 md:px-12 lg:px-24">
@@ -40,7 +54,7 @@ export default function AdminPanel() {
                     <Link to={`/homes/${item.id}/edit`} className="px-4 py-2 bg-black text-white rounded cursor-pointer hover:bg-gray-800 transition">
                       Edit
                     </Link>
-                    <button className="px-4 py-2 bg-red-600 text-white rounded cursor-pointer hover:bg-red-700 transition">
+                    <button onClick={() => deleteHouseButton(item.id)} className="px-4 py-2 bg-red-600 text-white rounded cursor-pointer hover:bg-red-700 transition">
                       Delete
                     </button>
                   </td>
