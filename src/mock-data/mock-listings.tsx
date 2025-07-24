@@ -194,5 +194,5 @@ export const mockListings = [
       address: "55 Prairie Ln, Des Moines, IA",
       image: "https://en.idei.club/uploads/posts/2023-12/1702587927_en-idei-club-p-nice-house-with-swimming-pool-dizain-pinte-1.jpg"
     }
-  ] as const satisfies Listing[];;
+  ] as const satisfies Listing[];
   

@@ -12,6 +12,7 @@ import About from "./pages/About"
 import Sell from "./pages/Sell"
 import { ListingsProvider } from "./context/ListingsContext"
 import AdminPanel from "./pages/AdminPanel"
+import Edit from "./pages/Edit"
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
       <Route path="/sell" element={<Sell popHandler={popHandler}/>} />
       <Route path="/catalog" element={<FindHome />} />
       <Route path="/about" element={<About />} />
+      <Route path="/homes/:id/edit" element={<Edit popHandler={popHandler}/>} />
       <Route path="/contact" element={<Contacts popHandler={popHandler}/>} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 

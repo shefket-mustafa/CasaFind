@@ -1,4 +1,5 @@
-import { useListings } from "../context/ListingsContext"
+import { Link } from "react-router";
+import { Listing, useListings } from "../context/ListingsContext"
 
 export default function AdminPanel() {
 
@@ -21,7 +22,7 @@ export default function AdminPanel() {
               </tr>
             </thead>
             <tbody>
-              {listings.map((item: ListingType) => (
+              {listings.map((item: Listing) => (
                 <tr
                   key={item.id}
                   className="border-b border-gray-100 hover:bg-gray-50 transition"
@@ -30,16 +31,16 @@ export default function AdminPanel() {
                   <td className="py-4 px-6 text-gray-600">${item.price}</td>
                   <td className="py-4 px-6">
                     <img
-                      src={item.imageUrl}
+                      src={item.image}
                       alt={item.title}
                       className="w-24 h-16 object-cover rounded"
                     />
                   </td>
                   <td className="py-4 px-6 flex space-x-2">
-                    <button className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition">
+                    <Link to={`/homes/${item.id}/edit`} className="px-4 py-2 bg-black text-white rounded cursor-pointer hover:bg-gray-800 transition">
                       Edit
-                    </button>
-                    <button className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">
+                    </Link>
+                    <button className="px-4 py-2 bg-red-600 text-white rounded cursor-pointer hover:bg-red-700 transition">
                       Delete
                     </button>
                   </td>
@@ -50,7 +51,7 @@ export default function AdminPanel() {
         </div>
   
         <div className="mt-8 text-center">
-          <button className="px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition text-lg">
+          <button className="px-6 py-3 bg-black text-white cursor-pointer rounded hover:bg-gray-800 transition text-lg">
             + Add New Listing
           </button>
         </div>
