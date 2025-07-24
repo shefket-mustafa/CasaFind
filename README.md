@@ -2,7 +2,7 @@
 
 **CasaFind** is a modern, responsive real estate web application built with **React + TypeScript**, powered by **Context API** for global state management. It features a dynamic catalog of property listings, user-controlled submissions, and smooth UI animations powered by **Framer Motion** and **Tailwind CSS**. The app is designed as a practice project to solidify frontend architecture, form validation with **Yup**, and React ecosystem fundamentals.
 
-> 🚧 This is a learning-focused project, and a work in progress. The goal is to master component organization, form control, client-side validation, and dynamic rendering of real estate data.
+- Admin dashboard at `/admin` for managing listings (currently public — authentication and user logic coming soon)
 
 ## 🔗 Live Demo
 
@@ -24,6 +24,9 @@
 - Form-based property submission with validation
 - Clean reusable component structure
 - Practice with routing, controlled inputs, conditional rendering, and UI state
+
+ 
+
 
 ## Getting Started
 
