@@ -5,25 +5,16 @@ import { listingSchema } from "../utils/yup/listingSchema";
 import { useListings } from "../context/ListingsContext";
 import { v4 as uuidv4 } from "uuid";
 import { PopHandler } from "./Contacts";
-import { usePopUp } from "../context/PopUpContext";
 
 interface FormData {
-  title: string;
-  image: string;
-  category: "house" | "apartment";
-  bathrooms: number;
-  bedrooms: number;
-  sqft: number;
-  yearBuilt: number;
-  price: number;
-  address: string;
+email: string,
+password: string,
 }
 
-export default function Sell() {
+export default function Login({ popHandler }: PopHandler) {
   const navigate = useNavigate();
   const { addListing } = useListings();
-  const { popHandler } = usePopUp();
- 
+
   const {
     register,
     handleSubmit,

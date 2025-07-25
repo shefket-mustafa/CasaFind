@@ -1,14 +1,13 @@
 import { Link, useNavigate } from "react-router";
 import { Listing, useListings } from "../context/ListingsContext"
+import { usePopUp } from "../context/PopUpContext";
 
-interface PopHandler {
-  popHandler : (message: string) => void
-}
 
-export default function AdminPanel({popHandler}: PopHandler) {
+export default function AdminPanel() {
 
     const {listings, deleteListing} = useListings();
     const navigate = useNavigate();
+    const {popHandler} = usePopUp();
 
     const deleteHouseButton = (id: string) => {
       if(!id) return;

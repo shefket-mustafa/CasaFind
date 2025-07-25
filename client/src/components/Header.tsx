@@ -34,6 +34,12 @@
                     <Link to='about'>About us</Link>
                 </nav>
 
+                <nav className='hidden md:flex text-lg gap-10'>
+                <Link to='/login'>Login</Link>
+                <Link to='/register'>Register</Link>
+                <Link to='/logout'>Logout</Link>
+                </nav>
+
                 {/* Burger icon */}
                 <div className='md:hidden text-3xl cursor-pointer' onClick={toggleMenu}>
                     {isOpen ? <IoClose/> : <IoMenu/>}
@@ -46,7 +52,10 @@
                     <Link to='/catalog' onClick={toggleMenu}>Find a Home</Link>
                         <Link to='/sell' onClick={toggleMenu}>Sell</Link>
                         <Link to='contact' onClick={toggleMenu}>Contact</Link>
-                        <Link to='about' onClick={toggleMenu}>About us</Link>
+                        <Link to='/about' onClick={toggleMenu}>About us</Link>
+                        <Link to='/login' onClick={toggleMenu}>Login</Link>
+                        <Link to='/register' onClick={toggleMenu}>Register</Link>
+                        <Link to='/logoyt' onClick={toggleMenu}>Logout</Link>
                     </div>
                 )}
                 </motion.div>

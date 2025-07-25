@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router"
+import { usePopUp } from "../context/PopUpContext";
 
 export interface PopHandler {
     popHandler: (message:string) => void
 }
 
-export default function Contacts( {popHandler}:PopHandler ) {
+export default function Contacts() {
     const navigate = useNavigate();
+    const {popHandler} = usePopUp();
 
 
     return(

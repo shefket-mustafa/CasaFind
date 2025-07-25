@@ -5,6 +5,7 @@ import { listingSchema } from "../utils/yup/listingSchema";
 import { useListings } from "../context/ListingsContext";
 import { PopHandler } from "./Contacts";
 import { useEffect } from "react";
+import { usePopUp } from "../context/PopUpContext";
 
 interface FormData {
   title: string;
@@ -18,9 +19,10 @@ interface FormData {
   address: string;
 }
 
-export default function Edit({ popHandler }: PopHandler) {
+export default function Edit() {
   const navigate = useNavigate();
   const { editListing,  getCurrentListing } = useListings();
+  const { popHandler } = usePopUp();
 
   const {id} = useParams();
 
