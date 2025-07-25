@@ -20,7 +20,7 @@ if (!JWT_SECRET) {
         }
         console.log("JWT_SECRET:", JWT_SECRET);
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = await User.create({email, hashedPassword});
+        const user = await User.create({email, password: hashedPassword});
 
         const token = jwt.sign({id:user._id, email: user.email}, JWT_SECRET, {expiresIn: '2d'});
 
@@ -32,7 +32,6 @@ if (!JWT_SECRET) {
 
   //Login
 
-  //Login
 authRoutes.post('/login', async (req,res) => {
     const {email, password} = req.body;
 
@@ -41,7 +40,7 @@ authRoutes.post('/login', async (req,res) => {
         if(!user) {
             return res.status(400).json({message: 'Invalid credentials!'})
         }
-        const match = await bcrypt.compare(password, user.hashedPassword);
+        const match = await bcrypt.compare(password, user.password);
         if(!match) {
             return res.status(400).json({message: 'Invalid credentials!'})
         }
