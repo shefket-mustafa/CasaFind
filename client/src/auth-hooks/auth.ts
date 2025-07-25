@@ -15,7 +15,7 @@ export const useLogin = () => {
 
   const login = async (email: string, password: string) => {
     const response = await post<AuthResponse>(
-      "http://localhost:3030/users/login",
+      "https://casafind.onrender.com/login",
       { email, password }
     );
 
@@ -30,7 +30,7 @@ export const useRegister = () => {
 
   const register = async (email: string, password: string) => {
     const response = await post<AuthResponse>(
-      "http://localhost:3030/users/register",
+      "https://casafind.onrender.com/users/register",
       { email, password }
     );
 
