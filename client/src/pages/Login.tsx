@@ -1,30 +1,37 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { listingSchema } from "../utils/yup/listingSchema";
-import { Link } from "react-router";
-// import { v4 as uuidv4 } from "uuid";
+import { Link, useNavigate } from "react-router";
+import { useLogin } from "../auth-hooks/auth";
+import { loginSchema } from "../utils/yup/loginSchema";
+import { usePopUp } from "../context/PopUpContext";
 interface FormData {
   email: string;
   password: string;
 }
 
 export default function Login() {
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
+    const {popHandler} = usePopUp();
+    const {login} = useLogin();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({ resolver: yupResolver(listingSchema) });
+  } = useForm<FormData>({ resolver: yupResolver(loginSchema) });
 
-  //   const submitHouseButton = (data: FormData) => {
-  //     const newListing = { ...data, id: uuidv4() };
-  //     addListing(newListing);
-  //     popHandler("You have submitted your property!");
-  //     setTimeout(() => {
-  //       navigate("/catalog");
-  //     }, 2000);
-  //   };
+    const loginHandler = async (data: FormData) => {
+      
+      try{
+         await login(data.email, data.password);
+         popHandler("You have submitted your property!");
+         setTimeout(() => {
+          navigate("/catalog");
+        }, 2000);
+      }catch(err){
+        popHandler("Login failed. Check your credentials.");
+      }  
+    };
 
   return (
     <div className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-20">
@@ -33,20 +40,23 @@ export default function Login() {
           Login form
         </h2>
 
-        <form onSubmit={handleSubmit()} className="space-y-6">
+        <form onSubmit={handleSubmit(loginHandler)} className="space-y-6">
           <input
             {...register("email")}
             placeholder="Email"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
-          {errors.title && (
-            <p className="text-red-500 text-sm">{errors.title.message}</p>
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message}</p>
           )}
           <input
             {...register("password")}
             placeholder="Password"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password.message}</p>
+          )}
 
           <button
             type="submit"
@@ -57,7 +67,7 @@ export default function Login() {
 
           <div className="flex justify-center gap-2">
             <p>Don't have a registration?</p>
-            <Link className="text-gray-500" to="/regiter">Register</Link>
+            <Link className="text-gray-500" to="/register">Register</Link>
           </div>
         </form>
       </div>

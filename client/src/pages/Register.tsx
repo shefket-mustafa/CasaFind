@@ -62,7 +62,7 @@ export default function Register() {
 
           <div className="flex justify-center gap-2">
             <p>Already registered?</p>
-            <Link className="text-gray-500" to="/regiter">Login</Link>
+            <Link className="text-gray-500" to="/login">Login</Link>
           </div>
         </form>
       </div>
