@@ -15,7 +15,7 @@ export const useLogin = () => {
 
   const login = async (email: string, password: string) => {
     const response = await post<AuthResponse>(
-      "https://casafind.onrender.com/login",
+      "https://casafind.onrender.com/users/login",
       { email, password }
     );
 
