@@ -12,6 +12,7 @@ import Sell from "./pages/Sell"
 import AdminPanel from "./pages/AdminPanel"
 import Edit from "./pages/Edit"
 import { usePopUp } from "./context/PopUpContext"
+import Login from "./pages/Login"
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
       <Route path="/homes/:id/edit" element={<Edit />} />
       <Route path="/contact" element={<Contacts />} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
+
+      <Route path="/login" element={<Login />} />
+
 
       <Route path="/admin" element={<AdminPanel />} />
 
