@@ -9,7 +9,6 @@ interface FormData {
   email: string;
   password: string;
 }
-
 export default function Login() {
   const navigate = useNavigate();
   const { popHandler } = usePopUp();
