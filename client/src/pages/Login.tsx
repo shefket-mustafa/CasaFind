@@ -4,34 +4,35 @@ import { Link, useNavigate } from "react-router";
 import { useLogin } from "../auth-hooks/auth";
 import { loginSchema } from "../utils/yup/loginSchema";
 import { usePopUp } from "../context/PopUpContext";
+import { useState } from "react";
 interface FormData {
   email: string;
   password: string;
 }
 
 export default function Login() {
-    const navigate = useNavigate();
-    const {popHandler} = usePopUp();
-    const {login} = useLogin();
+  const navigate = useNavigate();
+  const { popHandler } = usePopUp();
+  const { login } = useLogin();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({ resolver: yupResolver(loginSchema) });
+  const [showPassword, setShowPassword] = useState(false);
 
-    const loginHandler = async (data: FormData) => {
-      
-      try{
-         await login(data.email, data.password);
-         popHandler("Successful login!");
-         setTimeout(() => {
-          navigate("/catalog");
-        }, 2000);
-      }catch(err){
-        popHandler("Login failed. Check your credentials.");
-      }  
-    };
+  const loginHandler = async (data: FormData) => {
+    try {
+      await login(data.email, data.password);
+      popHandler("Successful login!");
+      setTimeout(() => {
+        navigate("/catalog");
+      }, 2000);
+    } catch (err) {
+      popHandler("Login failed. Check your credentials.");
+    }
+  };
 
   return (
     <div className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-20">
@@ -41,35 +42,49 @@ export default function Login() {
         </h2>
 
         <form onSubmit={handleSubmit(loginHandler)} className="space-y-6">
-          <input
-            {...register("email")}
-            placeholder="Email"
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
-          )}
-          <input
-            {...register("password")}
-            placeholder="Password"
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password.message}</p>
-          )}
+  <input
+    {...register("email")}
+    placeholder="Email"
+    className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+  />
+  {errors.email && (
+    <p className="text-red-500 text-sm">{errors.email.message}</p>
+  )}
 
-          <button
-            type="submit"
-            className="w-full bg-black text-white font-semibold cursor-pointer px-6 py-3 rounded-lg hover:bg-gray-800 transition"
-          >
-            Login
-          </button>
+  <div className="relative">
+    <input
+      {...register("password")}
+      type={showPassword ? "text" : "password"}
+      placeholder="Password"
+      className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-10"
+    />
+    <button
+      type="button"
+      onClick={() => setShowPassword((prev) => !prev)}
+      className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-500"
+    >
+      {showPassword ? "Hide" : "Show"}
+    </button>
+    {errors.password && (
+      <p className="text-red-500 text-sm">{errors.password.message}</p>
+    )}
+  </div>
 
-          <div className="flex justify-center gap-2">
-            <p>Don't have a registration?</p>
-            <Link className="text-gray-500" to="/register">Register</Link>
-          </div>
-        </form>
+  <button
+    type="submit"
+    className="w-full bg-black text-white font-semibold cursor-pointer px-6 py-3 rounded-lg hover:bg-gray-800 transition"
+  >
+    Login
+  </button>
+
+  <div className="flex justify-center gap-2">
+    <p>Don't have a registration?</p>
+    <Link className="text-gray-500" to="/register">
+      Register
+    </Link>
+  </div>
+</form>
+
       </div>
     </div>
   );

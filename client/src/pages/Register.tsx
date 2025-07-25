@@ -1,27 +1,30 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { listingSchema } from "../utils/yup/listingSchema";
 import { Link, useNavigate } from "react-router";
 import { useRegister } from "../auth-hooks/auth";
 import { usePopUp } from "../context/PopUpContext";
 import { registerSchema } from "../utils/yup/registerSchema";
-// import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
+
 interface FormData {
   email: string;
   password: string;
-  rePassword: string
+  rePassword: string;
 }
 
 export default function Register() {
-    const navigate = useNavigate();
-    const { register: registerUser } = useRegister();
-    const { popHandler } = usePopUp();
+  const navigate = useNavigate();
+  const { register: registerUser } = useRegister();
+  const { popHandler } = usePopUp();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({ resolver: yupResolver(registerSchema) });
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
 
   const registerHandler = async (data: FormData) => {
     try {
@@ -43,7 +46,7 @@ export default function Register() {
         </h2>
 
         <form onSubmit={handleSubmit(registerHandler)} className="space-y-6">
-        <input
+          <input
             {...register("email")}
             placeholder="Email"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
@@ -52,25 +55,45 @@ export default function Register() {
             <p className="text-red-500 text-sm">{errors.email.message}</p>
           )}
 
-          <input
-            {...register("password")}
-            placeholder="Password"
-            type="password"
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password.message}</p>
-          )}
+          {/* Password Field */}
+          <div className="relative">
+            <input
+              {...register("password")}
+              placeholder="Password"
+              type={showPassword ? "text" : "password"}
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-10"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-500"
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+            {errors.password && (
+              <p className="text-red-500 text-sm">{errors.password.message}</p>
+            )}
+          </div>
 
-          <input
-            {...register("rePassword")}
-            placeholder="Confirm password"
-            type="password"
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          {errors.rePassword && (
-            <p className="text-red-500 text-sm">{errors.rePassword.message}</p>
-          )}
+          {/* Confirm Password Field */}
+          <div className="relative">
+            <input
+              {...register("rePassword")}
+              placeholder="Confirm password"
+              type={showRePassword ? "text" : "password"}
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black pr-10"
+            />
+            <button
+              type="button"
+              onClick={() => setShowRePassword((prev) => !prev)}
+              className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-500"
+            >
+              {showRePassword ? "Hide" : "Show"}
+            </button>
+            {errors.rePassword && (
+              <p className="text-red-500 text-sm">{errors.rePassword.message}</p>
+            )}
+          </div>
 
           <button
             type="submit"

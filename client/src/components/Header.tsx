@@ -3,17 +3,22 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useAuth } from "../context/AuthContext";
+import { usePopUp } from "../context/PopUpContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const {popHandler} = usePopUp();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const logoutHandler = () => {
     logout();
-    navigate("/");
+    popHandler("You have logged out!")
+    setTimeout(() => {
+        navigate("/");
+    },2000)
   };
 
   return (
@@ -43,7 +48,7 @@ export default function Header() {
           {user ? (
             <>
               <span className="text-sm text-gray-300">Hello, {user.email}</span>
-              <button onClick={logoutHandler} className="hover:underline">
+              <button onClick={logoutHandler} className="hover:underline cursor-pointer">
                 Logout
               </button>
             </>
@@ -64,6 +69,11 @@ export default function Header() {
       {/* Mobile burger Menu */}
       {isOpen && (
         <div className="md:hidden bg-black/95 text-white flex flex-col gap-6 px-6 pb-6">
+             {user && (
+      <span className="text-sm text-gray-300">
+        Hello, {user.email}
+      </span>
+    )}
           <Link to="/catalog" onClick={toggleMenu}>
             Find a Home
           </Link>
@@ -81,6 +91,7 @@ export default function Header() {
 
           {user ? (
             <button
+            className="cursor-pointer"
               onClick={() => {
                 toggleMenu();
                 logoutHandler();
