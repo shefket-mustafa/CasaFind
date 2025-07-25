@@ -13,6 +13,7 @@ import AdminPanel from "./pages/AdminPanel"
 import Edit from "./pages/Edit"
 import { usePopUp } from "./context/PopUpContext"
 import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       <Route path="/homes/:id/details" element={<ItemDetails />} />
 
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
 
       <Route path="/admin" element={<AdminPanel />} />
