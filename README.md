@@ -48,38 +48,39 @@
 ---
 
 ## 🗂 Project Architecture – CasaFind
-
+```
 CasaFind/
 ├── client/                      # Frontend
-│   ├── public/                 # Static assets (index.html, icons, etc.)
+│   ├── public/                  # Static assets (index.html, icons, etc.)
 │   ├── src/
-│   │   ├── components/         # Reusable UI components (Header, Footer, ItemDetails, etc.)
-│   │   ├── context/            # React context providers (AuthContext, PopUpContext, ListingsContext)
-│   │   ├── pages/              # Main route pages (Home, Login, Register, Catalog, Details, etc.)
-│   │   ├── auth-hooks/         # Custom hooks for login, register, logout
+│   │   ├── components/          # Reusable UI components (Header, Footer, ItemDetails, etc.)
+│   │   ├── context/             # React context providers (AuthContext, PopUpContext, ListingsContext)
+│   │   ├── pages/               # Main route pages (Home, Login, Register, Catalog, Details, etc.)
+│   │   ├── auth-hooks/          # Custom hooks for login, register, logout
 │   │   ├── utils/
-│   │   │   ├── yup/            # Yup validation schemas (loginSchema, registerSchema, etc.)
-│   │   │   └── requester.ts    # Reusable HTTP requester with token handling
-│   │   ├── App.tsx            # Main App with routes
-│   │   ├── main.tsx           # ReactDOM entry point
-│   │   └── index.css          # Tailwind base styles
-│   ├── tailwind.config.js     # Tailwind CSS configuration
-│   ├── tsconfig.json          # TypeScript config
-│   └── vite.config.ts         # Vite config for React
+│   │   │   ├── yup/             # Yup validation schemas (loginSchema, registerSchema, etc.)
+│   │   │   └── requester.ts     # Reusable HTTP requester with token handling
+│   │   ├── App.tsx              # Main App with routes
+│   │   ├── main.tsx             # ReactDOM entry point
+│   │   └── index.css            # Tailwind base styles
+│   ├── tailwind.config.js       # Tailwind CSS configuration
+│   ├── tsconfig.json            # TypeScript config
+│   └── vite.config.ts           # Vite config for React
 │
-├── server/                     # Backend
-│   ├── config.ts              # MongoDB connection setup
-│   ├── models/                # Mongoose models (User.ts)
-│   ├── routes/                # Express route handlers (authRoutes)
-│   ├── server.ts              # Entry point for the Express app
-│   ├── dist/                  # Compiled JS output from TypeScript
-│   ├── package.json           # Server scripts and dependencies
-│   ├── tsconfig.json          # TypeScript config
-│   └── .env                   # Environment variables 
+├── server/                      # Backend (only for user auth)
+│   ├── config.ts                # MongoDB connection setup
+│   ├── models/                  # Mongoose models (User.ts)
+│   ├── routes/                  # Express route handlers (authRoutes)
+│   ├── server.ts                # Entry point for the Express app
+│   ├── dist/                    # Compiled JS output from TypeScript
+│   ├── package.json             # Server scripts and dependencies
+│   ├── tsconfig.json            # TypeScript config
+│   └── .env                     # Environment variables 
 │
-├── .gitignore                 # Ignored files/folders
-├── README.md                  # Project overview (you're writing this now)
-└── CasaFind.sln (optional)    # For VSCode/IDE solution management
+├── .gitignore                   # Ignored files/folders
+├── README.md                    # Project overview
+└── vercel.json                  # Client-side routing fix for Vercel
+```
 
 
 ---
