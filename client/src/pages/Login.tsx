@@ -31,6 +31,8 @@ export default function Login() {
       }, 2000);
     } catch (err) {
       popHandler("Login failed. Check your credentials.");
+      console.log(err);
+      
     }
   };
 
