@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router"
+import { Route, Routes, useNavigate } from "react-router"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./pages/Home"
@@ -14,10 +14,17 @@ import Edit from "./pages/Edit"
 import { usePopUp } from "./context/PopUpContext"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import { useEffect } from "react"
+import { setNavigate } from "./auth-hooks/requester"
 
 function App() {
 
   const {popMessage} = usePopUp();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setNavigate(navigate);
+  }, [navigate]);
 
   return (
     <>

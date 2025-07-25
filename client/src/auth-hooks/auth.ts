@@ -1,31 +1,41 @@
+// auth-hooks/auth.ts
+import { useAuth } from "../context/AuthContext";
 import { post } from "./requester";
 
-const baseUrl = 'http://localhost:3030/users';
-
-interface AuthTypes {
-    email: string
-    password: string
-    accessToken?: string;
-    _id?: string
-};
+interface AuthResponse {
+  accessToken: string;
+  user: {
+    email: string;
+    _id: string;
+  };
+}
 
 export const useLogin = () => {
-    const login = async (email: string, password: string): Promise<AuthTypes> => {
-      const response = await post<AuthTypes>(`${baseUrl}/login`, { email, password });
-      localStorage.setItem('auth', JSON.stringify(response));
-      return response;
-    };
-  
-    return { login };
+  const { login: loginContext } = useAuth();
+
+  const login = async (email: string, password: string) => {
+    const response = await post<AuthResponse>(
+      "http://localhost:3030/users/login",
+      { email, password }
+    );
+
+    loginContext({ ...response.user, accessToken: response.accessToken });
   };
 
-  export const useRegister = () => {
+  return { login };
+};
 
-    const register = async (email:string, password:string): Promise<AuthTypes> => {
-        const response = await post<AuthTypes>(`${baseUrl}/register`, { email,password });
-        localStorage.setItem('auth', JSON.stringify(response))
-        return response
-    };
+export const useRegister = () => {
+  const { login: loginContext } = useAuth();
 
-    return {register};
-;}
+  const register = async (email: string, password: string) => {
+    const response = await post<AuthResponse>(
+      "http://localhost:3030/users/register",
+      { email, password }
+    );
+
+    loginContext({ ...response.user, accessToken: response.accessToken });
+  };
+
+  return { register };
+};

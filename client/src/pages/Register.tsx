@@ -1,30 +1,39 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { listingSchema } from "../utils/yup/listingSchema";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useRegister } from "../auth-hooks/auth";
+import { usePopUp } from "../context/PopUpContext";
+import { registerSchema } from "../utils/yup/registerSchema";
 // import { v4 as uuidv4 } from "uuid";
 interface FormData {
   email: string;
   password: string;
+  rePassword: string
 }
 
 export default function Register() {
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
+    const { register: registerUser } = useRegister();
+    const { popHandler } = usePopUp();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({ resolver: yupResolver(listingSchema) });
+  } = useForm<FormData>({ resolver: yupResolver(registerSchema) });
 
-  //   const submitHouseButton = (data: FormData) => {
-  //     const newListing = { ...data, id: uuidv4() };
-  //     addListing(newListing);
-  //     popHandler("You have submitted your property!");
-  //     setTimeout(() => {
-  //       navigate("/catalog");
-  //     }, 2000);
-  //   };
+  const registerHandler = async (data: FormData) => {
+    try {
+      await registerUser(data.email, data.password);
+      popHandler("Registration successful!");
+      setTimeout(() => {
+        navigate("/catalog");
+      }, 1500);
+    } catch (err: any) {
+      popHandler(err.message || "Registration failed.");
+    }
+  };
 
   return (
     <div className="w-full min-h-screen bg-white flex justify-center items-center px-4 py-20">
@@ -33,25 +42,35 @@ export default function Register() {
           Register form
         </h2>
 
-        <form onSubmit={handleSubmit()} className="space-y-6">
-          <input
+        <form onSubmit={handleSubmit(registerHandler)} className="space-y-6">
+        <input
             {...register("email")}
             placeholder="Email"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
-          {errors.title && (
-            <p className="text-red-500 text-sm">{errors.title.message}</p>
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message}</p>
           )}
+
           <input
             {...register("password")}
             placeholder="Password"
+            type="password"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
-            <input
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password.message}</p>
+          )}
+
+          <input
             {...register("rePassword")}
             placeholder="Confirm password"
+            type="password"
             className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
           />
+          {errors.rePassword && (
+            <p className="text-red-500 text-sm">{errors.rePassword.message}</p>
+          )}
 
           <button
             type="submit"
@@ -62,7 +81,9 @@ export default function Register() {
 
           <div className="flex justify-center gap-2">
             <p>Already registered?</p>
-            <Link className="text-gray-500" to="/login">Login</Link>
+            <Link className="text-gray-500" to="/login">
+              Login
+            </Link>
           </div>
         </form>
       </div>

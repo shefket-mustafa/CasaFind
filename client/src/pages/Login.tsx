@@ -24,7 +24,7 @@ export default function Login() {
       
       try{
          await login(data.email, data.password);
-         popHandler("You have submitted your property!");
+         popHandler("Successful login!");
          setTimeout(() => {
           navigate("/catalog");
         }, 2000);
