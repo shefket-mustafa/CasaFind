@@ -3,7 +3,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate, useParams } from "react-router";
 import { listingSchema } from "../utils/yup/listingSchema";
 import { useListings } from "../context/ListingsContext";
-import { PopHandler } from "./Contacts";
 import { useEffect } from "react";
 import { usePopUp } from "../context/PopUpContext";
 

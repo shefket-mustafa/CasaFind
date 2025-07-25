@@ -4,7 +4,6 @@ import { useNavigate } from "react-router";
 import { listingSchema } from "../utils/yup/listingSchema";
 import { useListings } from "../context/ListingsContext";
 import { v4 as uuidv4 } from "uuid";
-import { PopHandler } from "./Contacts";
 import { usePopUp } from "../context/PopUpContext";
 
 interface FormData {
