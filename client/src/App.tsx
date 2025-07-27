@@ -16,11 +16,14 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import { useEffect } from "react"
 import { setNavigate } from "./auth-hooks/requester"
+import { useAuth } from "./context/AuthContext"
+import PageNotFound from "./pages/PageNotFound"
 
 function App() {
 
   const {popMessage} = usePopUp();
   const navigate = useNavigate();
+  const {user} = useAuth();
 
   useEffect(() => {
     setNavigate(navigate);
@@ -44,9 +47,9 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-
-      <Route path="/admin" element={<AdminPanel />} />
-
+      {user?.email === "admin@abv.bg" && (<Route path="/admin" element={<AdminPanel />} />)}
+      
+    <Route path="*" element={<PageNotFound />}></Route>
 
     </Routes>
     <Footer />
