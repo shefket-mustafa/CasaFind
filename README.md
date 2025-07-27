@@ -6,6 +6,8 @@
 
 🏡 Property listings are currently mocked on the frontend for demonstration and testing purposes.
 
+> **Note:** The backend is hosted on Render’s free tier and may take **30–50 seconds** to respond on first request due to **cold start delays**.
+
 ---
 
 ## 🔧 Tech Stack
@@ -30,6 +32,7 @@
 
 - 🔐 User Authentication (Register, Login, Logout)
 - 📬 Contact Form & About Page
+- 🧑‍💼 **Admin Panel** (accessible only to authorized admin account)
 - 🏠 Add & Manage Listings (Authenticated users only)
 - 🔍 Search, Filter, Sort Listings
 - 🖥️ Fully Responsive (Mobile & Desktop)
@@ -44,6 +47,19 @@
 - 🔌 Backend API: [https://casafind.onrender.com](https://casafind.onrender.com)
 
 ---
+
+
+## 🧪 Test Accounts
+
+You can log in with the following test accounts:
+
+**Admin Account**  
+- Email: `admin@abv.bg`  
+- Password: `123456`  
+
+**Regular User**  
+- Email: `test@abv.bg`  
+- Password: `123456`  
 
 ---
 
