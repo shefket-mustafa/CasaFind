@@ -48,6 +48,7 @@ export default function Header() {
           {user ? (
             <>
               <span className="text-sm text-gray-300">Hello, {user.email}</span>
+              {user.email === "admin@abv.bg" && (<Link className="hover:underline cursor-pointer" to='/admin'>Admin</Link>)}
               <button onClick={logoutHandler} className="hover:underline cursor-pointer">
                 Logout
               </button>
