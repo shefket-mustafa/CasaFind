@@ -237,7 +237,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
             className="bg-[url(https://www.quickenloans.com/learnassets/QuickenLoans.com/Learning%20Center%20Images/Siege-real-estate-propery-taxes-vs-personal.png)]
-        bg-cover bg-center w-full md:w-1/2 h-1/2 flex items-center justify-center mx-10"
+        bg-contain bg-no-repeat bg-center w-full md:w-1/2 h-1/2 flex items-center justify-center mx-10"
           ></motion.div>
 
           {/* right container */}

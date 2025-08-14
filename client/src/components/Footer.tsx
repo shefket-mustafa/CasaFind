@@ -9,7 +9,7 @@ export default function Footer() {
         <footer className="flex flex-col bg-black text-white px-5">
         
 
-        <div className="flex flex-row justify-between py-5 border-b-1">
+        <div className="flex flex-col md:flex-row justify-between py-5 border-b-1 gap-8">
   
         <div>
           <h4 className="font-extrabold pb-3">Explore</h4>
