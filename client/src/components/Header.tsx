@@ -30,9 +30,9 @@ export default function Header() {
       viewport={{ once: true }}
       className="sticky top-0 z-30 justify-between items-center px-5 h-20 bg-black/90 text-white"
     >
-      <div className="flex justify-between items-center px-6 h-20">
+      <div className="flex justify-between items-center px-6 h:15 md:h-20">
         {/* Logo */}
-        <div className="flex text-3xl">
+        <div className="flex text-3xl ">
           <Link to="/">casaFind</Link>
         </div>
 
