@@ -9,16 +9,16 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const {popHandler} = usePopUp();
+  const { popHandler } = usePopUp();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const logoutHandler = () => {
     logout();
-    popHandler("You have logged out!")
+    popHandler("You have logged out!");
     setTimeout(() => {
-        navigate("/");
-    },2000)
+      navigate("/");
+    }, 2000);
   };
 
   return (
@@ -39,8 +39,8 @@ export default function Header() {
         {/* Desktop menu */}
         <nav className="hidden md:flex text-lg gap-10">
           <Link to="/catalog">Find a Home</Link>
-          {user && <Link to="/sell">Sell</Link>}
-          {<Link to="/findAgent">Choose an Agent</Link>}
+          {user && (<Link to="/sell">Sell</Link>)}
+          {user && (<Link to="/findAgent">Choose an Agent</Link>)}
           <Link to="contact">Contact</Link>
           <Link to="about">About us</Link>
         </nav>
@@ -49,8 +49,15 @@ export default function Header() {
           {user ? (
             <>
               <span className="text-sm text-gray-300">Hello, {user.email}</span>
-              {user.email === "admin@abv.bg" && (<Link className="hover:underline cursor-pointer" to='/admin'>Admin</Link>)}
-              <button onClick={logoutHandler} className="hover:underline cursor-pointer">
+              {user.email === "admin@abv.bg" && (
+                <Link className="hover:underline cursor-pointer" to="/admin">
+                  Admin
+                </Link>
+              )}
+              <button
+                onClick={logoutHandler}
+                className="hover:underline cursor-pointer"
+              >
                 Logout
               </button>
             </>
@@ -63,7 +70,10 @@ export default function Header() {
         </nav>
 
         {/* Burger icon */}
-        <div className="md:hidden py-5 text-3xl cursor-pointer" onClick={toggleMenu}>
+        <div
+          className="md:hidden py-5 text-3xl cursor-pointer"
+          onClick={toggleMenu}
+        >
           {isOpen ? <IoClose /> : <IoMenu />}
         </div>
       </div>
@@ -71,11 +81,9 @@ export default function Header() {
       {/* Mobile burger Menu */}
       {isOpen && (
         <div className="md:hidden bg-black/95 text-white flex flex-col gap-6 px-6 py-5 pb-6">
-             {user && (
-      <span className="text-sm text-gray-300">
-        Hello, {user.email}
-      </span>
-    )}
+          {user && (
+            <span className="text-sm text-gray-300">Hello, {user.email}</span>
+          )}
           <Link to="/catalog" onClick={toggleMenu}>
             Find a Home
           </Link>
@@ -84,7 +92,8 @@ export default function Header() {
               Sell
             </Link>
           )}
-          <Link to="contact" onClick={toggleMenu}>
+          {user && (<Link to="/findAgent">Choose an Agent</Link>)}
+          <Link to="/contact" onClick={toggleMenu}>
             Contact
           </Link>
           <Link to="/about" onClick={toggleMenu}>
@@ -93,7 +102,7 @@ export default function Header() {
 
           {user ? (
             <button
-            className="cursor-pointer"
+              className="cursor-pointer"
               onClick={() => {
                 toggleMenu();
                 logoutHandler();
