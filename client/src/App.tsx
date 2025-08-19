@@ -24,6 +24,7 @@ import TermsOfService from "./components/legal/TermsOfService";
 import PrivacyPolicy from "./components/legal/PrivacyPolicy";
 import CCPAPrivacyPolicy from "./components/legal/CCPAPrivacyPolicy";
 import LegalDisclaimer from "./components/legal/LegalDisclaimer";
+import FAQ from "./pages/FAQ";
 
 function App() {
   const { popMessage } = usePopUp();
@@ -51,6 +52,7 @@ function App() {
         <Route path="/homes/:id/details" element={<ItemDetails />} />
         <Route path="/findAgent" element={<FindAgent />} />
         <Route path="/agentDetails/:id" element={<AgentDetails />} />
+        <Route path="/faq" element={<FAQ />} />
 
         {/* legal */}
         <Route path="/legal/terms" element={<TermsOfService />} />
