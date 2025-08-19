@@ -39,8 +39,8 @@ export default function Header() {
         {/* Desktop menu */}
         <nav className="hidden md:flex text-lg gap-10">
           <Link to="/catalog">Find a Home</Link>
-          {user && <Link to="/sell">Sell</Link>}
-          {<Link to="/findAgent">Choose an Agent</Link>}
+          {user && (<Link to="/sell">Sell</Link>)}
+          {user && (<Link to="/findAgent">Choose an Agent</Link>)}
           <Link to="contact">Contact</Link>
           <Link to="about">About us</Link>
         </nav>
@@ -81,6 +81,11 @@ export default function Header() {
           </Link>
           {user && (
             <Link to="/sell" onClick={toggleMenu}>
+              Sell
+            </Link>
+          )}
+          {user && (
+            <Link to="/findAgent" onClick={toggleMenu}>
               Sell
             </Link>
           )}
