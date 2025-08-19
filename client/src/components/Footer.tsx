@@ -25,11 +25,10 @@ export default function Footer() {
         <div>
           <h4 className="font-extrabold pb-3">Legal</h4>
           <ul>
-            <li><Link to="/terms-of-service">Terms of Service</Link></li>
-            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link to="/ccpa-policy">CCPA Privacy Policy</Link></li>
-            <li><Link to="/disclaimer">Legal Disclaimer</Link></li>
-            <li><Link to="/sitemap">Sitemap</Link></li>
+            <li><Link to="/legal/terms">Terms of Service</Link></li>
+            <li><Link to="/legal/privacy">Privacy Policy</Link></li>
+            <li><Link to="/legal/ccpa">CCPA Privacy Policy</Link></li>
+            <li><Link to="/legal/disclaimer">Legal Disclaimer</Link></li>
           </ul>
         </div>
   
