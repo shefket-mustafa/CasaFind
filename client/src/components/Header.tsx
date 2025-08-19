@@ -40,6 +40,7 @@ export default function Header() {
         <nav className="hidden md:flex text-lg gap-10">
           <Link to="/catalog">Find a Home</Link>
           {user && <Link to="/sell">Sell</Link>}
+          {<Link to="/findAgent">Choose an Agent</Link>}
           <Link to="contact">Contact</Link>
           <Link to="about">About us</Link>
         </nav>
