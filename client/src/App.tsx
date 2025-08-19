@@ -18,6 +18,7 @@ import { useEffect } from "react"
 import { setNavigate } from "./auth-hooks/requester"
 import { useAuth } from "./context/AuthContext"
 import PageNotFound from "./pages/PageNotFound"
+import FindAgent from "./pages/FindAgent"
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
       <Route path="/homes/:id/edit" element={<Edit />} />
       <Route path="/contact" element={<Contacts />} />
       <Route path="/homes/:id/details" element={<ItemDetails />} />
+      <Route path="/findAgent" element={<FindAgent />} />
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
