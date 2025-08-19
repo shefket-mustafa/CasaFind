@@ -62,14 +62,14 @@ export default function Header() {
         </nav>
 
         {/* Burger icon */}
-        <div className="md:hidden text-3xl cursor-pointer" onClick={toggleMenu}>
+        <div className="md:hidden py-5 text-3xl cursor-pointer" onClick={toggleMenu}>
           {isOpen ? <IoClose /> : <IoMenu />}
         </div>
       </div>
 
       {/* Mobile burger Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black/95 text-white flex flex-col gap-6 px-6 pb-6">
+        <div className="md:hidden bg-black/95 text-white flex flex-col gap-6 px-6 py-5 pb-6">
              {user && (
       <span className="text-sm text-gray-300">
         Hello, {user.email}

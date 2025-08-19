@@ -15,7 +15,7 @@ export default function Footer() {
           <h4 className="font-extrabold pb-3">Explore</h4>
           <ul>
             <li><a href="/catalog">Browse Listings</a></li>
-            <li><a href="/agents">Find an Agent</a></li>
+            <li><a href="/findAgent">Find an Agent</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact</a></li>

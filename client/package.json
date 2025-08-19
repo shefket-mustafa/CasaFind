@@ -17,6 +17,7 @@
     "express": "^5.1.0",
     "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.540.0",
     "motion": "^12.23.6",
     "npm": "^11.5.1",
     "react": "^19.1.0",
