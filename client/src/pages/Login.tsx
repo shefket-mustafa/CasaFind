@@ -1,10 +1,10 @@
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link, useNavigate } from "react-router";
 import { useLogin } from "../auth-hooks/auth";
 import { loginSchema } from "../utils/yup/loginSchema";
 import { usePopUp } from "../context/PopUpContext";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { motion } from "motion/react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
@@ -59,7 +59,6 @@ export default function Login() {
           </div>
 
           <form onSubmit={handleSubmit(loginHandler)} className="space-y-5">
-            {/* Email Input */}
             <div className="space-y-2">
               <input
                 {...register("email")}
@@ -73,7 +72,6 @@ export default function Login() {
               )}
             </div>
 
-            {/* Password Input */}
             <div className="space-y-2">
               <div className="relative">
                 <input
@@ -101,7 +99,6 @@ export default function Login() {
               )}
             </div>
 
-            {/* Login Button */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -112,7 +109,6 @@ export default function Login() {
               {isSubmitting ? "Signing in..." : "Sign In"}
             </motion.button>
 
-            {/* Divider */}
             <div className="flex items-center gap-3 my-6">
               <div className="flex-1 h-px bg-white/20" />
               <span className="text-gray-400 text-xs">or</span>

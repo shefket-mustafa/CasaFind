@@ -44,7 +44,6 @@ export default function Register() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-black flex justify-center items-center px-4 py-20 relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
@@ -55,7 +54,7 @@ export default function Register() {
         className="w-full max-w-md relative z-10"
       >
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
-          {/* Header */}
+          
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-2">
               Create Account
@@ -66,7 +65,7 @@ export default function Register() {
           </div>
 
           <form onSubmit={handleSubmit(registerHandler)} className="space-y-5">
-            {/* Email Input */}
+
             <div className="space-y-2">
               <input
                 {...register("email")}
@@ -80,7 +79,7 @@ export default function Register() {
               )}
             </div>
 
-            {/* Password Input */}
+            
             <div className="space-y-2">
               <div className="relative">
                 <input
@@ -108,7 +107,7 @@ export default function Register() {
               )}
             </div>
 
-            {/* Confirm Password Input */}
+            
             <div className="space-y-2">
               <div className="relative">
                 <input
@@ -136,7 +135,7 @@ export default function Register() {
               )}
             </div>
 
-            {/* Register Button */}
+            
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -146,14 +145,14 @@ export default function Register() {
               Create Account
             </motion.button>
 
-            {/* Divider */}
+            
             <div className="flex items-center gap-3 my-6">
               <div className="flex-1 h-px bg-white/20" />
               <span className="text-gray-400 text-xs">or</span>
               <div className="flex-1 h-px bg-white/20" />
             </div>
 
-            {/* Login Link */}
+            
             <div className="text-center">
               <p className="text-gray-400 text-sm">
                 Already have an account?{" "}
@@ -168,7 +167,7 @@ export default function Register() {
           </form>
         </div>
 
-        {/* Footer text */}
+        
         <p className="text-center text-gray-500 text-xs mt-6">
           By creating an account, you agree to our Terms of Service
         </p>

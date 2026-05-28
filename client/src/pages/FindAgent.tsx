@@ -100,10 +100,10 @@ export default function FindAgent() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Link
-                    to="/contact"
+                    to={`/agentDetails/${agent.id}`}
                     className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 group/btn"
                   >
-                    <span>Contact Agent</span>
+                    <span>View Profile</span>
                     <AiOutlineArrowRight className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
