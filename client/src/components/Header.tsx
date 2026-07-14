@@ -15,10 +15,8 @@ export default function Header() {
 
   const logoutHandler = () => {
     logout();
+    navigate("/");
     popHandler("You have logged out!");
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
   };
 
   return (
@@ -28,12 +26,9 @@ export default function Header() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="sticky top-0 z-50 w-full"
     >
-      
       <div className="absolute inset-0 bg-black/40 backdrop-blur-md border-b border-white/10" />
 
-      
       <div className="relative max-w-7xl mx-auto px-4 md:px-6 h-20 flex justify-between items-center">
-        
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             to="/"
@@ -43,7 +38,6 @@ export default function Header() {
           </Link>
         </motion.div>
 
-        
         <nav className="hidden md:flex items-center gap-8">
           <Link
             to="/catalog"
@@ -86,7 +80,6 @@ export default function Header() {
           </Link>
         </nav>
 
-        
         <div className="hidden md:flex items-center gap-6">
           {user ? (
             <>
@@ -136,7 +129,6 @@ export default function Header() {
           )}
         </div>
 
-        
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -147,7 +139,6 @@ export default function Header() {
         </motion.button>
       </div>
 
-      
       {isOpen && (
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
