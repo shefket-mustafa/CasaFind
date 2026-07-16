@@ -26,9 +26,8 @@ export default function Login() {
 
   const loginHandler = async (data: FormData) => {
     try {
-      navigate("/catalog");
       await login(data.email, data.password);
-
+      navigate("/catalog");
       popHandler("Successful login!");
     } catch (err) {
       popHandler("Login failed. Check your credentials.");
